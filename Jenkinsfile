@@ -13,4 +13,9 @@ pipeline {
        }
      }
   }
+  post { always {
+    script {
+      input(message: "Env is  up for you to take a look at.\nAborting the job at this point will AVOID the cleaning process", ok: "CLEAN THE ENV")
+    }
+  } }
 }
